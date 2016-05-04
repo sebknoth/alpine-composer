@@ -10,12 +10,15 @@ RUN apk upgrade -U && \
     php7-json \
     php7-phar \
     php7-openssl \
-    php7-mbstring
+    php7-mbstring \
+    php7-dom
 
 # Install composer global bin
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer self-update
+
+RUN rm -fr /var/cache/apk/*
 
 WORKDIR /usr/share/nginx/html
 
