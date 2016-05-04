@@ -17,5 +17,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer self-update
 
+WORKDIR /usr/share/nginx/html
+
 ENTRYPOINT ["composer"]
 CMD ["--help"]
