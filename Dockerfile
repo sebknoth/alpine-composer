@@ -11,6 +11,7 @@ RUN apk upgrade -U && \
     php7-phar \
     php7-openssl \
     php7-mbstring \
+    php7-iconv \
     php7-dom
 
 # Install composer global bin
